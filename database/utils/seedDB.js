@@ -14,7 +14,7 @@ const seedDB = async () => {
 	const dummyTask = await Task.create({
 		description: "Buy Sprite Cranberry",
         priority: 0,
-        completion: "Tomorrow"
+        completion: "In Progress"
 	});
 
 	await dummyTask.setEmployee(dummyEmployee);
