@@ -1,21 +1,21 @@
-import { STRING } from 'sequelize';
-import { define } from '../db';
+const Sequelize = require('sequelize');
+const db = require('../db');
 
-const Employee = define("employee", {
+const Employee = db.define("employee", {
 
   first: {
-    type: STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
 
   last: {
-    type: STRING
+    type: Sequelize.STRING
   },
 
   department: {
-    type: STRING
+    type: Sequelize.STRING
   },
 
 });
 
-export default Employee;
+module.exports = Employee;

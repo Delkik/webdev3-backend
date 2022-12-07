@@ -1,5 +1,5 @@
-const express = require('express');Instructors
-const router = express.Router();courses
+const express = require('express');
+const router = express.Router();
 const { Task, Employee } = require('../database/models');
 
 // helper function so we don't need to wrap our
@@ -10,15 +10,16 @@ const ash = require('express-async-handler');
 
 /** GET ALL EMPLOYEES */
 router.get('/', ash(async(req, res) => {
-  let employees = await Employee.findAll({include: [Course]});
+  let employees = await Employee.findAll({include: [Task]});
+  // console.log(employees)
   res.status(200).json(employees);
 }));
 
-// /** GET EMPLOYEE BY ID*/
-// router.get('/:id', ash(async(req, res) => {
-//   let employee = await Employee.findByPk(req.params.id, {include: [Course]});
-//   res.status(200).json(employee);
-// }));
+/** GET EMPLOYEE BY ID*/
+router.get('/:id', ash(async(req, res) => {
+  let employee = await Employee.findByPk(req.params.id, {include: [Task]});
+  res.status(200).json(employee);
+}));
 
 // // Delete employee
 // router.delete('/:id', ash(async(req, res) => {
@@ -43,7 +44,7 @@ router.get('/', ash(async(req, res) => {
 //       id: req.params.id
 //     }
 //   });
-//   let employee = await Employee.findByPk(req.params.id, {include: [Course]});
+//   let employee = await Employee.findByPk(req.params.id, {include: [Task]});
 //   res.status(201).json(employee);
 // }))
 

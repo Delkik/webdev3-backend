@@ -1,9 +1,9 @@
-const dbname = "webdev3-backend";
+const dbName = "webdev3-backend";
 const dbUser = "postgres";
-const dbPwd = 'pgpwd';
+const dbPwd = 'webdev3pwd';
 
-export default {
-    dbname,
+module.exports = {
+    dbName,
     dbUser,
     dbPwd
 }

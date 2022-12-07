@@ -1,21 +1,22 @@
-import { INTEGER, STRING } from 'sequelize';
-import { define } from '../db';
+const Sequelize = require('sequelize');
+const db = require('../db');
 
-const Task = define("task", {
+
+const Task = db.define("task", {
 
   description: {
-    type: STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
 
   priority: {
-    type: INTEGER
+    type: Sequelize.INTEGER
   },
 
   completion: {
-    type: STRING
+    type: Sequelize.STRING
   },
 
 });
 
-export default Task;
+module.exports = Task;

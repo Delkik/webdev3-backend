@@ -1,14 +1,14 @@
-import { Task, Employee } from '../models';
+const { Employee, Task } = require('../models');
 
 const seedDB = async () => {
 	const dummyEmployee = await Employee.create({
-		firstname: "Melissa",
-		lastname: "Lynch",
+		first: "Melissa",
+		last: "Lynch",
 		department: "Computer Science"
 	});
 	const dummyEmployee2 = await Employee.create({
-		firstname: "Kim",
-		lastname: "Kardashian"
+		first: "Kim",
+		last: "Kardashian"
 	});
 
 	const dummyTask = await Task.create({
@@ -21,4 +21,4 @@ const seedDB = async () => {
 	
 }
 
-export default seedDB;
+module.exports = seedDB;

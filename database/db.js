@@ -1,8 +1,8 @@
 // Instantiate database 
 
 // Module dependencies;
-import Sequelize from 'sequelize';
-import { dbName, dbUser, dbPwd } from './utils/configDB';
+const Sequelize = require('sequelize');
+const {dbName, dbUser, dbPwd} = require('./utils/configDB');
 
 // Confirmation message (limit these in production);
 console.log('Opening database connection');
@@ -14,4 +14,4 @@ const db = new Sequelize(dbName, dbUser, dbPwd, {
   port: 5432,
 });
 // Export our instance of Sequelize, which will be modified with models;
-export default db;
+module.exports = db;
