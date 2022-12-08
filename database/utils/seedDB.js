@@ -7,13 +7,13 @@ const seedDB = async () => {
 		department: "Computer Science"
 	});
 	const dummyEmployee2 = await Employee.create({
-		first: "Kim",
-		last: "Kardashian"
+		first: "Dan",
+		last: "Elkik"
 	});
 
 	const dummyTask = await Task.create({
 		description: "Buy Sprite Cranberry",
-        priority: 0,
+        priority: 0, // urgent
         completion: "In Progress"
 	});
 
