@@ -58,15 +58,15 @@ router.get('/:id', ash(async(req, res) => {
 //     .catch(err => next(err));
 // });
 
-// /******************* EDIT *********************/
+/******************* EDIT *********************/
 
-// router.put('/:id', ash(async(req, res) => {
-//   await Task.update(req.body,
-//         { where: {id: req.params.id} }
-//   );
-//   let task = await Task.findByPk(req.params.id);
-//   res.status(201).json(task);
-// }));
+router.put('/:id', ash(async(req, res) => {
+  await Task.update(req.body,
+        { where: {id: req.params.id} }
+  );
+  let task = await Task.findByPk(req.params.id);
+  res.status(201).json(task);
+}));
 
 // Export our router, so that it can be imported to construct our apiRouter;
 module.exports = router;
