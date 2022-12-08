@@ -10,7 +10,7 @@ const ash = require('express-async-handler');
 
 /** GET ALL TASKS: then/catch */
 // router.get('/', function(req, res, next) {
-//   Task.findAll({include: [Instructor]})
+//   Task.findAll({include: [Employee]})
 //     .then(tasks => res.status(200).json(tasks))
 //     .catch(err => next(err));
 // });
@@ -18,7 +18,7 @@ const ash = require('express-async-handler');
 /** GET ALL TASKS: async/await */
 // router.get('/', async (req, res, next) => {
 //   try {
-//     let tasks = await Task.findAll({include: [Instructor]});
+//     let tasks = await Task.findAll({include: [Employee]});
 //     res.status(200).json(tasks);
 //   } catch(err) {
 //     next(err);
@@ -29,16 +29,16 @@ const ash = require('express-async-handler');
 // automatically catches any error and sends to middleware
 // same as using try/catch and calling next(error)
 router.get('/', ash(async(req, res) => {
-  //{include: [Instructor]}
+  //{include: [Employee]}
   let tasks = await Task.findAll();
   res.status(200).json(tasks);
 }));
 
-// /** GET TASK BY ID */
-// router.get('/:id', ash(async(req, res) => {
-//   let task = await Task.findByPk(req.params.id, {include: [Instructor]});
-//   res.status(200).json(task);
-// }));
+/** GET TASK BY ID */
+router.get('/:id', ash(async(req, res) => {
+  let task = await Task.findByPk(req.params.id, {include: [Employee]});
+  res.status(200).json(task);
+}));
 
 // /** ADD NEW TASK */
 // router.post('/', function(req, res, next) {
