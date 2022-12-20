@@ -21,15 +21,15 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(employee);
 }));
 
-// // Delete employee
-// router.delete('/:id', ash(async(req, res) => {
-//   await Employee.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   });
-//   res.status(200).json("Employee deleted");
-// }));
+// Delete employee
+router.delete('/:id', ash(async(req, res) => {
+  await Employee.destroy({
+    where: {
+      id: req.params.id
+    }
+  });
+  res.status(200).json("Employee deleted");
+}));
 
 // Add new employee
 router.post('/', ash(async(req, res) => {

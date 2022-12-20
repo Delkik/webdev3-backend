@@ -17,7 +17,14 @@ const seedDB = async () => {
         completion: "In Progress"
 	});
 
-	await dummyTask.setEmployee(dummyEmployee);
+	const dummyTask2 = await Task.create({
+		description: "Sell Sprite Cranberry",
+        priority: 0, // urgent
+        completion: "Not Started"
+	});
+
+	await dummyTask.setEmployee(dummyEmployee2);
+	await dummyTask2.setEmployee(dummyEmployee);
 	
 }
 
