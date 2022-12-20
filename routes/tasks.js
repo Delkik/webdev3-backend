@@ -40,12 +40,12 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(task);
 }));
 
-// /** ADD NEW TASK */
-// router.post('/', function(req, res, next) {
-//   Task.create(req.body)
-//     .then(createdCourse => res.status(200).json(createdCourse))
-//     .catch(err => next(err));
-// });
+/** ADD NEW TASK */
+router.post('/', function(req, res, next) {
+  Task.create(req.body)
+    .then(createdCourse => res.status(200).json(createdCourse))
+    .catch(err => next(err));
+});
 
 // /** DELETE TASK */
 // router.delete('/:id', function(req, res, next) {

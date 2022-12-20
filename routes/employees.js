@@ -31,11 +31,11 @@ router.get('/:id', ash(async(req, res) => {
 //   res.status(200).json("Employee deleted");
 // }));
 
-// // Add new employee
-// router.post('/', ash(async(req, res) => {
-//   let newInstructor = await Employee.create(req.body);
-//   res.status(200).json(newInstructor);
-// }));
+// Add new employee
+router.post('/', ash(async(req, res) => {
+  let newEmployee = await Employee.create(req.body);
+  res.status(200).json(newEmployee);
+}));
 
 // Edit employee
 router.put('/:id', ash(async(req, res) => {
